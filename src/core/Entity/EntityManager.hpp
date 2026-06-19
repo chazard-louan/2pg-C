@@ -15,12 +15,7 @@ class EntityManager {
 public:
     void add(std::unique_ptr<Entity> entity);
 
-    void update(float dt) const;
-
-    void render(sf::RenderWindow& window) const;
-
-    void registerPhysics(class PhysicsManager& physics) const;
-
+    std::vector<std::unique_ptr<Entity>>& getEntities();
 private:
     std::vector<std::unique_ptr<Entity>> entities;
 };
