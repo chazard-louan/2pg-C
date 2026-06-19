@@ -6,12 +6,13 @@
 #define MYGAME_GAMESCENE_H
 #pragma once
 
-#include "../core/Scene.hpp"
-#include "../core/EntityManager.hpp"
+#include "../core/Scene/Scene.hpp"
+#include "../core/Entity/EntityManager.hpp"
 #include "../input/KeyboardController.hpp"
-#include "Player.hpp"
+#include "Player/Player.hpp"
 #include "../config/Settings.hpp"
-
+#include "../physics/PhysicsManager.hpp"
+#include "Mecanics/RopeSystem.hpp"
 
 class GameScene : public Scene {
 public:
@@ -24,8 +25,10 @@ public:
 private:
     EntityManager entityManager;
     Settings& settings;
-
+    PhysicsManager physicsManager;
     InputManager input;
     KeyboardController keyboard;
+    RopeSystem ropeSystem;
+    //CollisionSystem collisionSystem;
 };
 #endif //MYGAME_GAMESCENE_H

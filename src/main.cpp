@@ -2,7 +2,7 @@
 // Created by louan on 18/06/2026.
 //
 #include <SFML/Graphics.hpp>
-#include "core/SceneManager.hpp"
+#include "core/Scene/SceneManager.hpp"
 #include "game/GameScene.hpp"
 #include "input/KeyboardController.hpp"
 #include "config/Settings.hpp"

@@ -6,10 +6,10 @@
 #define MYGAME_PLAYERENTITY_H
 #pragma once
 
-#include "../core/Entity.hpp"
-#include "../config/Settings.hpp"
-#include "../physics/PhysicsManager.hpp"
-#include "../input/Controller.hpp"
+#include "../../core/Entity/Entity.hpp"
+#include "../../config/Settings.hpp"
+#include "../../physics/PhysicsManager.hpp"
+#include "../../input/Controller.hpp"
 
 class Player : public Entity {
 public:
@@ -17,14 +17,11 @@ public:
     Player(Controller &controller, sf::Vector2f initialPosition);
 
     // Overrides from Entity
-    void registerPhysics(PhysicsManager& physics) override;
     void update(float dt) override;
     void render(sf::RenderWindow& window) override;
 
 
-    float speed = 200.f;
-    PhysicsComponent physics;
-    sf::RectangleShape shape;
+    float moveForce = 200.f;
 private:
     Controller& controller;
 

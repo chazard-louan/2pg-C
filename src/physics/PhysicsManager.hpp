@@ -4,27 +4,20 @@
 
 #ifndef MYGAME_PHYSICMANAGER_H
 #define MYGAME_PHYSICMANAGER_H
+
 #pragma once
 #include <SFML/Graphics.hpp>
-
-
-struct PhysicsComponent {
-    sf::Vector2f velocity{0.f, 0.f};
-    sf::Vector2f acceleration{0.f, 0.f};
-
-    bool useGravity = true;
-};
+#include "PhysicsComponent.hpp"
 
 class PhysicsManager {
 public:
-    void add(PhysicsComponent* phys, sf::RectangleShape* shape);
+    void add(PhysicsComponent* phys);
 
     void update(float dt) const;
 
 private:
     struct Body {
         PhysicsComponent* physics;
-        sf::RectangleShape* shape;
     };
 
     std::vector<Body> bodies;
